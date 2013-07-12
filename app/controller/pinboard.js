@@ -19,13 +19,17 @@ exports.list = function(req, res) {
   toread: "no",
   tags: "REST error api status code"
  */  
-  pinboard.get('posts/all', function(data) {
-    // for(var i in data) {
-    //   webshot(data[i].href, data[i].meta+'.png', function(err) {
-    //     console.log('ok!');
-    //   });
-    // }
+  pinboard.get('posts/all', {start: 0, results: 500}, function(data) {
+    var tableData = { column: [[], [], []] };
 
-    res.render('index', { 'pinboardData' : data });
+    for(var i = 0; i < data.length; i+=3) {
+      for(var j = 0; j < 3; j++) {
+        if(i+j > (data.length-1)) break;
+
+        tableData.column[j].push(data[i+j]);
+      }
+    }
+
+    res.render('index', { 'pinboardData' : tableData });
   });
 }

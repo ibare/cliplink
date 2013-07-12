@@ -11,11 +11,11 @@ html
     center
       h1 Pin Browser
 
-    ol
-      each item in pinboardData
-        li
-          div 
-            a(href="#{item.href}", target="_blank")
-              img(src="/#{item.meta}.png", width="300", height="300")
-          div 
-            p #{item.description}
+    div.container
+      each column in pinboardData.column
+        div.column
+          each bookmark in column
+            div.bookmark
+              a(href="#{bookmark.href}", target="_blank")
+                img(src="/shot/#{bookmark.meta}.png", width="100%")
+              p #{bookmark.description}
