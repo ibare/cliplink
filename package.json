@@ -6,6 +6,7 @@
   "dependencies": {
     "express": "3.x",
     "jade": "latest",
-    "pinboard": "latest"
+    "pinboard": "latest",
+    "webshot": "latest"
   }
 }
