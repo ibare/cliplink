@@ -1,0 +1,13 @@
+!!! 5
+html
+  head
+    title Pinbrowser
+
+  body
+
+    h1 Pin Browser
+
+    ol
+      each item in pinboardData
+        li 
+          a(href="#{item.href}", target="_blank") #{item.description}

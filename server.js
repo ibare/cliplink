@@ -1,6 +1,7 @@
 var express = require('express')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , pinboard = require('./app/controller/pinboard')
 
 var app = express();
 
@@ -16,9 +17,7 @@ app.configure(function () {
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
-app.get('/', function(req, res) { 
-  res.send('ok');
-});
+app.get('/', pinboard.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Pinbrowser 서버가 ' + app.get('port') + '포트에서 동작합니다.');
