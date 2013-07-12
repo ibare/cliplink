@@ -1,0 +1,19 @@
+ul, ol { 
+  list-style: none;
+}
+img { 
+  border: 1px solid #aaa;
+}
+li {
+  width: 320px;
+  height: 400px;
+  display: inline-block;
+}
+li p { 
+  display: block;
+  width: 300px;
+  height: 50px;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+  overflow: hidden;
+}

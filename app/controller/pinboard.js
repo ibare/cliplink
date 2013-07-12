@@ -1,11 +1,11 @@
 var pinboard = require('pinboard');
+var webshot = require('webshot');
 
 pinboard.config({
   username: 'ibare',
   password: 'ultima7841',
   format: 'json'
 });
-
 
 exports.list = function(req, res) { 
 /* Pinboard result itme spec
@@ -20,6 +20,12 @@ exports.list = function(req, res) {
   tags: "REST error api status code"
  */  
   pinboard.get('posts/all', function(data) {
+    // for(var i in data) {
+    //   webshot(data[i].href, data[i].meta+'.png', function(err) {
+    //     console.log('ok!');
+    //   });
+    // }
+
     res.render('index', { 'pinboardData' : data });
   });
 }
