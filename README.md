@@ -1,4 +1,4 @@
 cliplink
 ==========
 
-![](cliplink.png)
+![](cliplink.jpg)
